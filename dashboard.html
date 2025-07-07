@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Booking Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+    }
+
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎯 Book Your Appointment</h2>
+
+  <form id="bookingForm">
+    <label for="category">Select Category</label>
+    <select id="category" required>
+      <option value="">-- Choose a topic --</option>
+      <option value="Health">Health & Wellness</option>
+      <option value="Business">Business Ideas</option>
+      <option value="Communication">Communication Skills</option>
+      <option value="Teaching">Teaching & Education</option>
+    </select>
+    <h3>Your Booked Appointments</h3>
+<table id="userAppointments" style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <thead>
+    <tr>
+      <th style="text-align:left;">Category</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+    <label for="date">Pick a Date</label>
+    <input type="date" id="date" required>
+
+    <label for="slot">Choose a Time Slot</label>
+    <select id="slot" required>
+      <option value="">-- Select a time slot --</option>
+      <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+      <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+      <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+      <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>
+    </select>
+
+    <button type="submit">Book Free Demo</button>
+
+    <p class="note">You will receive a confirmation after submission.</p>
+  </form>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Appointment booked! (Firebase integration coming next)");
+    });
+  </script>
+  <script type="module" src="booking.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("hfkRDC6CN5NZMjU4D"); 
+  })();
+</script>
+
+</body>
+</html>
